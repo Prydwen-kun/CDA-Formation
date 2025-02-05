@@ -264,23 +264,212 @@
         </div>
       </section>
       <section class="section-5">
-        <h4>
-          <p class="text-color-orange rubik-16 medium">PRICING</p>
-          <p class="text-color-black rubik font-size-44 bold-700">
-            Eating well without breaking the bank
-          </p>
-        </h4>
-        <div class="payment-option">
-          <div class="option">
-            <p class="text-color-orange rubik font-size-20 bold-600">STARTER</p>
-            <p class="price font-size-62 text-color-black bold-600">$399</p>
-            <p>per month. That's just $13 per meal!</p>
-            <button class="button-orange">Start eating well</button>
+        <div class="sec-5-container">
+          <h4 class="margin-bot-96">
+            <p class="text-color-orange rubik-16 medium">PRICING</p>
+            <p class="text-color-black rubik font-size-44 bold-700">
+              Eating well without breaking the bank
+            </p>
+          </h4>
+          <div class="payment-option">
+            <div class="option">
+              <div class="option-head">
+                <p class="text-color-orange rubik font-size-20 bold-600">
+                  STARTER
+                </p>
+                <p class="price font-size-62 text-color-black bold-600 rubik">
+                  $399
+                </p>
+                <p class="rubik-16">per month. That's just $13 per meal!</p>
+              </div>
+              <div class="meal-benefits rubik-18">
+                <p><i class="fa-solid fa-check"></i>2 meals per day</p>
+                <p><i class="fa-solid fa-check"></i>Order 24/7</p>
+                <p><i class="fa-solid fa-check"></i>Delivery is free</p>
+                <p>
+                  <i class="fa-solid fa-xmark"></i>
+                </p>
+              </div>
+              <button class="button-orange rubik font-size-20 bold-600">
+                Start eating well
+              </button>
+            </div>
+            <div class="option complete-op">
+              <div class="complete-op-band rubik bold-700">BEST VALUE</div>
+              <div class="option-head">
+                <p class="text-color-orange rubik font-size-20 bold-600">
+                  COMPLETE
+                </p>
+                <p class="price rubik font-size-62 text-color-black bold-600">
+                  $649
+                </p>
+                <p class="rubik-16">per month. That's just $11 per meal!</p>
+              </div>
+              <div class="meal-benefits rubik-18">
+                <p><i class="fa-solid fa-check"></i>2 meals per day</p>
+                <p><i class="fa-solid fa-check"></i>Order 24/7</p>
+                <p><i class="fa-solid fa-check"></i>Delivery is free</p>
+                <p>
+                  <i class="fa-solid fa-check"></i>Get access to latest recipes
+                </p>
+              </div>
+              <button class="button-orange rubik font-size-20 bold-600">
+                Start eating well
+              </button>
+            </div>
           </div>
-          <div class="option"></div>
+          <p class="rubik-16 text-center margin-bot-96 margin-top-47">
+            Prices include all applicable taxes. You can cancel at any time.
+            Both plans include the following:
+          </p>
+          <div class="plan-benefit">
+            <div class="benefit">
+              <img src="export/Img - infinite outline.png" alt="" />
+              <h5 class="rubik font-size-24 bold-700">Never cook again!</h5>
+              <p class="rubik-18">
+                Our subscriptions cover 365 days per year, even including major
+                holidays.
+              </p>
+            </div>
+            <div class="benefit">
+              <img src="export/Img - nutrition outline.png" alt="" />
+              <h5 class="rubik font-size-24 bold-700">Local and organic</h5>
+              <p class="rubik-18">
+                Our subscriptions cover 365 days per year, even including major
+                holidays.
+              </p>
+            </div>
+            <div class="benefit">
+              <img src="export/Img - leaf outline.png" alt="" />
+              <h5 class="rubik font-size-24 bold-700">No waste</h5>
+              <p class="rubik-18">
+                Our subscriptions cover 365 days per year, even including major
+                holidays.
+              </p>
+            </div>
+            <div class="benefit">
+              <img src="export/Img - pause outline.png" alt="" />
+              <h5 class="rubik font-size-24 bold-700">Pause anytime</h5>
+              <p class="rubik-18">
+                Our subscriptions cover 365 days per year, even including major
+                holidays.
+              </p>
+            </div>
+          </div>
+          <form
+            id="first-meal-form"
+            class="first-meal-form margin-top-143"
+            action="#"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="form-left">
+              <h3 class="rubik bold-700 font-size-44">
+                Get your first meal for free!
+              </h3>
+              <p class="rubik-18">
+                Healthy, tasty and hassle-free meals are waiting for you. Start
+                eating well today. You can cancel or pause anytime. And the
+                first meal is on us!
+              </p>
+              <div class="form-content">
+                <div class="input-cont">
+                  <label class="rubik-16 bold-600" for="fullname"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    name="fullname"
+                    id="fullname"
+                    placeholder="John Smith"
+                    required
+                  />
+                </div>
+                <div class="input-cont">
+                  <label class="rubik-16 bold-600" for="email"
+                    >Email adress</label
+                  >
+
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="me@example.com"
+                    required
+                  />
+                </div>
+                <div class="input-cont">
+                  <label class="rubik-16 bold-600" for="source"
+                    >Where did you hear from us?</label
+                  >
+                  <select name="source" id="source">
+                    <option value="0" disabled selected>
+                      Please choose one option:
+                    </option>
+                    <option value="ad">Ads</option>
+                    <option value="social">Social Networks</option>
+                  </select>
+                </div>
+                <div class="sign-cont">
+                  <div class="hidden">hidden</div>
+                  <button class="sign-but rubik font-size-20 bold-600">
+                    Sign up now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-right">
+              <img src="export/Img - Woman enjoying food.png" alt="woman" />
+            </div>
+          </form>
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="rubik">
+      <div class="separator"></div>
+      <div class="footer-content">
+        <div class="foot-element">
+          <img src="export/logo.svg" alt="" />
+          <div class="socials">
+            <a href="#"><img src="export/Component 6.png" alt="" /></a>
+            <a href="#"><img src="export/Component 6 (1).png" alt="" /></a>
+            <a href="#"><img src="export/Component 6 (2).png" alt="" /></a>
+          </div>
+          <div class="copyright foot-text">
+            Copyright © 2025 by Omnifood, Inc. All rights reserved.
+          </div>
+        </div>
+        <div class="foot-element">
+          <div class="rubik-18 bold-600">Contact us</div>
+          <div class="foot-text">
+            623 Harrison St. 2nd Floor, San Fransisco, CA 94107
+          </div>
+          <div class="foot-text">
+            415-201-6370
+            <p>hello@omnifood.com</p>
+          </div>
+        </div>
+        <div class="foot-element">
+          <div class="rubik-18 bold-600">Account</div>
+          <a href="#">Create account</a>
+          <a href="#">Sign in</a>
+          <a href="#">iOS app</a>
+          <a href="#">Android app</a>
+        </div>
+        <div class="foot-element">
+          <div class="rubik-18 bold-600">Company</div>
+          <a href="#">About Omnifood</a>
+          <a href="#">For Business</a>
+          <a href="#">Cooking partners</a>
+          <a href="#">Careers</a>
+        </div>
+        <div class="foot-element">
+          <div class="rubik-18 bold-600">Resources</div>
+          <a href="#">Recipe directory</a>
+          <a href="#">Help center</a>
+          <a href="#">Privacy & terms</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
