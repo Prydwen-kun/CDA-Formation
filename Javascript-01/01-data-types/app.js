@@ -73,3 +73,29 @@ onkeydown = (ev) => {
       break;
   }
 };
+
+//BOT
+
+const bot = document.getElementById("rotate2");
+const body0 = document.getElementById("bodyId");
+let botPos = bot.getBoundingClientRect();
+
+setInterval(() => {
+  a = Math.random() * 900;
+  b = Math.random() * 1870;
+  o = Math.random() * 360;
+  r = Math.random() * 255;
+  g = Math.random() * 255;
+  c = Math.random() * 255;
+
+  bot.setAttribute(
+    "style",
+    `top:${a}px;
+    left:${b}px;
+    transform: rotate(${o}deg);
+    
+    `
+  );
+
+  body0.setAttribute("style", `background-color: rgb(${r},${g},${c});`);
+}, 2000);
