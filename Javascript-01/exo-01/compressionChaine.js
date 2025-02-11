@@ -2,7 +2,7 @@ function compressString(str) {
   let count = 1;
   let compress = [];
   let strArray = Array.from(str);
-  strArray.filter((element, index, array) => {
+  strArray.forEach((element, index, array) => {
     if (element === array[index - 1]) {
       count++;
     } else if (index !== 0) {
