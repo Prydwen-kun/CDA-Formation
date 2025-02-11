@@ -1,0 +1,24 @@
+body {
+  background-color: black;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+table {
+  background-color: rgb(55, 55, 55);
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid snow;
+  padding: 0.4rem;
+}
+
+#output {
+  background-color: rgb(59, 58, 58);
+  border-radius: 3px;
+}
