@@ -1,4 +1,4 @@
-let arrayToSort = [9, 7, 6, 1, 4, 5, 3, 6, 4, 15, 78, 54, 26, 5];
+let arrayToSort = [9, 7, 6, 1, 4, 5, 3, 6, 4, 15, 78, 54, 26, undefined];
 
 let arrayCopy = [];
 arrayCopy.push(Array.from(arrayToSort));
@@ -20,3 +20,11 @@ arrayCopy.push(arrayToSort);
 
 let arrayObject = { Array: arrayCopy[0], SortedArray: arrayCopy[1] };
 console.table(arrayObject);
+
+console.log(
+  "test > ",
+  arrayCopy[0][arrayCopy[0].length - 1],
+  " et ",
+  arrayCopy[0][arrayCopy[0].length],' => ',
+  arrayCopy[0][arrayCopy[0].length - 1] > arrayCopy[0][arrayCopy[0].length]
+);
