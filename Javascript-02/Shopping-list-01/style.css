@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  transition: background-color 1s ease-in-out;
+  transition: transform 100ms ease-in;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background: url('sparkle.gif');
+}
+input{
+    color: aliceblue;
+}
+input::placeholder{
+    color: aliceblue;
+}
+
+li {
+  width: 100%;
+}
+
+#button-runner {
+  background-color: red;
+  width: 100px;
+  padding: 10px;
+}
+
+.but-cont {
+  background-color: aqua;
+  width: 150px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 8ms ease-in;
+}
+
+#cursor {
+  background-color: black;
+  color: aliceblue;
+  width: 300px;
+  height: 300px;
+  font-size: 128px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+}
+
+.temp{
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.snoop-dog{
+    position: absolute;
+    right: 0;
+    top: calc(100vh - 452px);
+}
