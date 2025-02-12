@@ -8,13 +8,14 @@ body {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: hidden;
-  background: url('sparkle.gif');
+  background: url("sparkle.gif");
+  transition: transform 100ms ease-in;
 }
-input{
-    color: aliceblue;
+input {
+  color: aliceblue;
 }
-input::placeholder{
-    color: aliceblue;
+input::placeholder {
+  color: aliceblue;
 }
 
 li {
@@ -28,13 +29,13 @@ li {
 }
 
 .but-cont {
-  background-color: aqua;
+  background-color: rgba(0, 0, 0, 0);
   width: 150px;
   padding: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 8ms ease-in;
+  /* transition: all 16ms ease-in; */
 }
 
 #cursor {
@@ -56,15 +57,22 @@ li {
     linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
 }
 
-.temp{
-    background-color: black;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+.temp {
+    background: linear-gradient(
+        217deg,
+        rgba(255, 0, 0, 0.8),
+        rgba(255, 0, 0, 0) 70.71%
+      ),
+      linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+      linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
-.snoop-dog{
-    position: absolute;
-    right: 0;
-    top: calc(100vh - 452px);
+.snoop-dog {
+  position: absolute;
+  right: 0;
+  top: calc(100vh - 452px);
 }
+
