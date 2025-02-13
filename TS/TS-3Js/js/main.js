@@ -1,6 +1,7 @@
 // import * as THREE from "../three.cjs";
 // const THREE = require('../three.cjs') // NODE
 import * as THREE from "../three.module"; // non mais WTF ????
+import * as Lighting from "../js/engine/Lighting";
 
 const app = document.getElementById("app");
 
@@ -24,10 +25,6 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 //APPEND RENDERER
 app.appendChild(renderer.domElement);
 
-//AMBIENT LIGHT
-const light = new THREE.AmbientLight(0xcccccc); // soft white light
-scene.add(light);
-
 //FLOOR
 const geometryFloor = new THREE.BoxGeometry(100, 1, 100);
 const materialFloor = new THREE.MeshLambertMaterial({ color: 0x55aa00 });
@@ -38,19 +35,9 @@ scene.add(floor);
 floor.position.y = -1;
 floor.position.x = 0;
 
-// LIGHT DIRECTIONAL
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-directionalLight.position.set(0, 50, 60);
-directionalLight.castShadow = true;
-directionalLight.shadow.mapSize.width = 2048;
-directionalLight.shadow.mapSize.height = 2048;
-directionalLight.shadow.camera.near = 0.5;
-directionalLight.shadow.camera.far = 500;
-directionalLight.shadow.camera.top = 60;
-directionalLight.shadow.camera.bottom = -60;
-directionalLight.shadow.camera.left = -60;
-directionalLight.shadow.camera.right = 60;
-scene.add(directionalLight);
+//DIRECTIONAL LIGHT + AMBIENT
+const MainLight = new Lighting.Lighting();
+MainLight.addToScene(scene);
 
 // ROTATING CUBE
 const geometry = new THREE.BoxGeometry(1, 3, 1);
