@@ -6,22 +6,29 @@ class MapGeometry {
     x,
     y,
     z,
+    textureURL = "/Placeholder/oldWood.avif",
     material = new THREE.MeshLambertMaterial({ color: 0x55aa00 })
   ) {
+    //mesh GLTF loader
+    this.GLTFLoader = new GLTFLoader();
+    this.textureLoader = new THREE.TextureLoader();
+
     this.geometry = new THREE.BoxGeometry(x, y, z);
     this.material = material;
+    this.texture = this.textureLoader.load(textureURL);
+    if (typeof this.texture !== "undefined") {
+      this.material = new THREE.MeshLambertMaterial({ map: this.texture });
+    }
+    //object meshing
     this.object3D = new THREE.Mesh(this.geometry, this.material);
+    //3D object properties
     this.object3D.castShadow = true;
     this.object3D.receiveShadow = true;
     this.object3D.position.y = -1;
     this.object3D.position.x = 0;
-
-    //mesh GLTF loader
-    this.GLTFLoader = new GLTFLoader();
-    this.textureLoader = new THREE.TextureLoader();
   }
   loadMesh(modelURL) {
-    const gltfModel = new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       this.GLTFLoader.load(
         modelURL,
         (gltf) => {
@@ -36,14 +43,10 @@ class MapGeometry {
         }
       );
     });
+  }
 
-    this.object3D = gltfModel
-      .then((gltf) => {
-        return gltf.model.scene;
-      })
-      .catch((error) => {
-        console.log("Error :", error);
-      });
+  setObject3D(gltfScene) {
+    this.object3D = gltfScene;
   }
 
   setPosition(x, y, z) {
