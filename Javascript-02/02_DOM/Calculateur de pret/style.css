@@ -1,0 +1,63 @@
+body {
+  background-color: rgb(26, 32, 48);
+  color: rgb(241, 244, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  display: flex;
+  gap: 10rem;
+}
+
+#app > form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#app > section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-left: 1px solid aliceblue;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+#app>section span{
+    color: rgb(53, 255, 205);
+}
+
+#spinner {
+  display: none;
+  font-size: 32px;
+}
+
+#calculer {
+  height: 40px;
+  background-color: rgb(26, 32, 48);
+  color: rgb(241, 244, 255);
+  margin-top: 20px;
+}
+
+#calculer:hover {
+  background-color: rgb(41, 50, 76);
+  color: rgb(241, 244, 255);
+}
+
+input {
+  background-color: rgb(171, 215, 252);
+  color: rgb(38, 38, 39);
+  border-radius: 5px;
+  border: 1px solid aliceblue;
+  outline: none;
+  height: 40px;
+  font-size: 20px;
+}
+
+input::placeholder{
+    color: aliceblue;
+}

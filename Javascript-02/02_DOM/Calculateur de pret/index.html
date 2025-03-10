@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculateur de prêt</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Calculateur de prêt</h1>
+    <div id="app">
+      <form action="" method="post" id="form">
+        <label for="montant">Montant:</label>
+        <input
+          type="number"
+          name="montant"
+          id="montant"
+          placeholder="Montant du prêt"
+        />
+        <label for="taux">Taux:</label>
+        <input
+          type="number"
+          name="taux"
+          id="taux"
+          placeholder="Taux d'intérêts"
+        />
+        <label for="duree">Durée:</label>
+        <input
+          type="number"
+          name="duree"
+          id="duree"
+          placeholder="Nombre d'année"
+        />
+        <button type="submit" id="calculer">Calculer</button>
+      </form>
+      <section id="section">
+        <div>Paiement mensuel: <span id="mensuel"></span></div>
+        <div>Montant total remboursé: <span id="total"></span></div>
+        <div>Intérêts totaux: <span id="interet"></span></div>
+      </section>
+      <div id="spinner">&acE;</div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
