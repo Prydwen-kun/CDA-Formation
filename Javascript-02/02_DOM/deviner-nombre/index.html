@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deviner Nombre</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Deviner le nombre</h1>
+    <section>
+      <div class="interface">
+        <div class="input">
+          <label for="range">Plage du nombre</label>
+          <input type="text" name="range" id="range" />
+        </div>
+        <div class="input">
+          <label for="guess">Entrer nombre</label>
+          <input type="text" name="guess" id="guess" />
+        </div>
+        <div class="input">
+          <button id="guessBut">Try !</button>
+        </div>
+        <div class="input">
+          <button id="reset">Rejouer</button>
+        </div>
+      </div>
+      <div class="result">
+        <div id="essai">Essai restant</div>
+        <div class="gameStatut"></div>
+      </div>
+      <div class="historique">
+        <h2>Historique</h2>
+        <div class="hist-content"></div>
+      </div>
+    </section>
+  </body>
+</html>
+<script type="module" src="main.js"></script>

@@ -1,0 +1,86 @@
+body {
+  background-color: rgb(34, 48, 61);
+  color: rgb(224, 240, 254);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 30vh;
+}
+
+section > * {
+  height: 100%;
+}
+
+.interface {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.result {
+  border-left: 1px solid aliceblue;
+  padding: 10px;
+}
+
+.gameStatut {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.win {
+  color: rgb(8, 179, 8);
+}
+
+.lose {
+  color: rgb(183, 7, 7);
+}
+
+#guessBut {
+  font-size: 18px;
+  color: aliceblue;
+  background-color: rgb(15, 126, 222);
+}
+
+#essai {
+  font-size: 20px;
+}
+
+#reset {
+  display: none;
+  font-size: 18px;
+  color: aliceblue;
+  background-color: rgb(180, 37, 5);
+}
+
+.historique {
+  border-left: 1px solid aliceblue;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hist-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.hist-content > div {
+  border: 1px solid aliceblue;
+  padding: 5px;
+}
