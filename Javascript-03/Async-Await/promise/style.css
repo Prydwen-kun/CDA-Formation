@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: black;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 10px;
+}
+h1 {
+  font-size: 32px;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid aliceblue;
+  flex-wrap: wrap;
+  max-height: 70vh;
+  width: 90vw;
+  overflow-x: scroll;
+}
+
+#app > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  border: 1px solid aliceblue;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#app > div > a {
+  color: red;
+}
+
+.chuckNorris {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(40, 49, 77);
+  padding: 20px;
+}
+
+.chuckNorris > div {
+  font-size: 20px;
+}
+
+.chuckNorris > :nth-child(1) {
+  font-size: 25px;
+  color: rgb(255, 166, 0);
+  border-left: 1px solid aliceblue;
+  border-right: 1px solid aliceblue;
+  padding: 10px;
+}
+
+.quote {
+  border: 1px solid aliceblue;
+  padding: 20px;
+  margin: 10px;
+}
+
+#generate {
+  height: 40px;
+  border: 1px solid aliceblue;
+  background-color: rgb(228, 168, 56);
+  padding: 10px;
+  font-size: 18px;
+  color: rgba(48, 49, 50, 0.745);
+  border-radius: 5px;
+}
+
+#generate:hover {
+  background-color: rgb(251, 197, 97);
+  color: aliceblue;
+}
