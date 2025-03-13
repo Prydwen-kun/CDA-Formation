@@ -30,12 +30,25 @@ h1 {
 }
 
 #app > div {
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  font-size: 24px;
+}
+
+#app > div > span {
+  border: 1px solid aliceblue;
+  border-radius: 3px;
+  color: orange;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+#app > :nth-child(1) {
+  text-transform: capitalize;
 }
 
 #app > div > div {
@@ -50,7 +63,7 @@ h1 {
   border-radius: 20px;
 }
 
-#random:hover{
+#random:hover {
   background-color: rgb(255, 194, 109);
   border: 2px solid rgb(236, 245, 252);
 }
