@@ -133,6 +133,10 @@ async function saveEdit(event) {
   event.preventDefault();
   let title = document.getElementById("task").value;
   let user = document.getElementById("user").value;
+  if (title == "" || user == "" || isNaN(user)) {
+    alert("Fill all field or enter a proper number");
+    return;
+  }
   PATCH.body = {
     title: title,
     userId: user,
@@ -163,6 +167,10 @@ async function addTask(event) {
   event.preventDefault();
   const tache = document.querySelector("#tache").value;
   const user = document.querySelector("#userId").value;
+  if (tache == "" || user == "" || isNaN(user)) {
+    alert("Fill all field or enter a proper number");
+    return;
+  }
   POST.body = {
     title: tache,
     userId: user,
