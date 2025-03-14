@@ -106,8 +106,6 @@ async function toggleCompleted(event, todoId) {
   }
 }
 
-async function addTask() {}
-
 let editID = "1";
 async function editTask(event, edit_id) {
   const hiddenForm = document.querySelector(".hidden");
@@ -151,6 +149,43 @@ async function saveEdit(event) {
     userUP.innerHTML = user;
     const hiddenForm = document.querySelector(".hidden");
     hiddenForm.classList.remove("translateForm");
+  }
+}
+
+const addTaskButt = document.querySelector("#addTask");
+addTaskButt.addEventListener("click", (event) => {
+  addTask(event);
+});
+
+let maxID = 200;
+
+async function addTask(event) {
+  event.preventDefault();
+  const tache = document.querySelector("#tache").value;
+  const user = document.querySelector("#userId").value;
+  POST.body = {
+    title: tache,
+    userId: user,
+  };
+  const response = await fetch(`${url}`, POST);
+  console.log(response);
+  if (!response.ok) {
+    throw new Error(`Response status :${response.status}`);
+  } else {
+    const list = document.querySelector("#app");
+    maxID++;
+    const child = document.createElement("div");
+    child.classList.add(`todo${maxID}`);
+    child.innerHTML = `
+    <div class='idDiv'>${maxID}<button class='edit edit${maxID}'>Edit</button></div>
+    <div>${tache}</div>
+    <div>${user}</div>
+    <div>
+      <div class='completed comp${maxID}'>${"x"}</div>
+    </div>
+    <div><button class='suppr supp${maxID}')'>Supprimer</button></div>
+    `;
+    list.appendChild(child);
   }
 }
 

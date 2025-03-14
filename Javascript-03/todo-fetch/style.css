@@ -55,6 +55,11 @@ form > button {
   border: 1px solid aliceblue;
 }
 
+#addTask:hover{
+  cursor: pointer;
+  background-color: aqua;
+}
+
 #app {
   display: flex;
   flex-direction: column;
