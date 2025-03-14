@@ -174,6 +174,7 @@ async function addTask(event) {
   POST.body = {
     title: tache,
     userId: user,
+    completed: false,
   };
   const response = await fetch(`${url}`, POST);
   console.log(response);
