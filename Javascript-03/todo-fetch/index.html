@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-fetch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Todo fetch</h1>
+    <section class="container">
+      <div id="app">
+        <div>
+          <div>Id</div>
+          <div>Tâche</div>
+          <div>User</div>
+          <div>Complétée</div>
+          <div></div>
+        </div>
+      </div>
+      <form action="" id="add-task" method="post">
+        <div>
+          <label for="tache">Tâche</label>
+          <input
+            type="text"
+            name="tache"
+            id="tache"
+            placeholder="Description de la tâche"
+            required
+          />
+        </div>
+        <div>
+          <label for="userId">User ID</label>
+          <input
+            type="number"
+            name="userId"
+            id="userId"
+            placeholder="user ID"
+            required
+          />
+        </div>
+
+        <button>Add Task</button>
+      </form>
+    </section>
+    <div class="hidden">
+      <div class="editing"></div>
+      <form action="" id="editForm" name="editForm" method="post">
+        <div><label for="task">Tâche</label><input type="text" name="task" id="task"/></div>
+        <div><label for="user">User ID</label><input type="text" name="user" id="user"/></div>
+        <button id="hidden-save">Save</button>
+        <button id="hidden-close">Close</button>
+      </form>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
