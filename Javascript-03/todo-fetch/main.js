@@ -131,8 +131,8 @@ hiddenSave.addEventListener("click", (event) => {
 
 async function saveEdit(event) {
   event.preventDefault();
-  let title = document.getElementById("task").value;
-  let user = document.getElementById("user").value;
+  let title = document.getElementById("task").value.trim();
+  let user = document.getElementById("user").value.trim();
   if (title == "" || user == "" || isNaN(user)) {
     alert("Fill all field or enter a proper number");
     return;
@@ -165,8 +165,8 @@ let maxID = 200;
 
 async function addTask(event) {
   event.preventDefault();
-  const tache = document.querySelector("#tache").value;
-  const user = document.querySelector("#userId").value;
+  const tache = document.querySelector("#tache").value.trim();
+  const user = document.querySelector("#userId").value.trim();
   if (tache == "" || user == "" || isNaN(user)) {
     alert("Fill all field or enter a proper number");
     return;
@@ -194,6 +194,21 @@ async function addTask(event) {
     <div><button class='suppr supp${maxID}')'>Supprimer</button></div>
     `;
     list.appendChild(child);
+
+    const editButton = document.querySelector(`.edit${maxID}`);
+    editButton.addEventListener("click", (event) => {
+      editTask(event, `${maxID}`);
+    });
+
+    const compButt = document.querySelector(`.comp${maxID}`);
+    compButt.addEventListener("click", (event) => {
+      toggleCompleted(event, `${maxID}`);
+    });
+
+    const suppButton = document.querySelector(`.supp${maxID}`);
+    suppButton.addEventListener("click", (event) => {
+      supprimer(event, `${maxID}`);
+    });
   }
 }
 
