@@ -1,3 +1,4 @@
+const key = "NIbOCyGlJzg8gB83Em7G1Q==OSyo8ek2LLbFg6gf";
 
 const url = "https://api.api-ninjas.com/v1/randomuser";
 
