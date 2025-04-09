@@ -61,7 +61,7 @@ function main() {
 
   //   clear local storage button event listener
   const resetButton = document.getElementById("reset");
-  resetButton.addEventListener("click", tracker.reset());
+  resetButton.addEventListener("click", tracker.reset);
 }
 
 main();
