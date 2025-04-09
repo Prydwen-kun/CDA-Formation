@@ -16,6 +16,7 @@ function main() {
     tracker.activity = appData.activity || []; // Initialize with empty array if null
     tracker.displayMeals(); // Display meals from local storage
     tracker.displayWorkouts(); // Display workouts from local storage
+    tracker.displayStatistics();
   } else {
     Storage.saveToLocalStorage("appData", tracker); // Save initial state to local storage
   }
@@ -38,13 +39,14 @@ function main() {
     tracker.addMeal(meal);
     Storage.saveToLocalStorage("appData", tracker); // Save updated state to local storage
     tracker.displayMeals(); // Display updated meals
+    tracker.displayStatistics(); // Display updated statistics
   });
 
   //   add Workout button event listener
   addWorkoutButton.addEventListener("click", () => {
-    const workoutName = document.getElementById("workout_name").value;
+    const workoutName = document.getElementById("activity_name").value;
     const workoutCalories = parseInt(
-      document.getElementById("workout_calories").value,
+      document.getElementById("activity_calories").value,
       10
     );
     let workoutIdList = tracker.activity.map((workout) => workout.id); // Get the list of existing workout IDs
@@ -54,7 +56,12 @@ function main() {
     tracker.addWorkout(workout);
     Storage.saveToLocalStorage("appData", tracker); // Save updated state to local storage
     tracker.displayWorkouts(); // Display updated workouts
+    tracker.displayStatistics(); // Display updated statistics
   });
+
+  //   clear local storage button event listener
+  const resetButton = document.getElementById("reset");
+  resetButton.addEventListener("click", tracker.reset());
 }
 
 main();

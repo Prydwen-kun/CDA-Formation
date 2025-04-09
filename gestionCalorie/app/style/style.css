@@ -1,9 +1,51 @@
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  color: white;
+  padding: 2rem;
+}
+
+input {
+  background-color: rgb(63, 74, 80);
+  border-radius: 3px;
+  font-size: 2rem;
+  padding: 5px;
+}
+
+input::placeholder {
+  color: rgb(132, 132, 132);
+}
+
+button {
+  font-size: 2rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(110, 129, 139);
+}
+
+li {
+  font-size: 18px;
+  background-color: rgb(65, 92, 107);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px;
+}
+h2 {
+  font-size: 24px;
+}
+
+.meals-list > li > button,
+.workout-list > li > button {
+  border-left: 2px solid rgb(37, 36, 36);
 }

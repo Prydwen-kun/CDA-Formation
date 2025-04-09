@@ -7,11 +7,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./app/style/style.css" />
   </head>
-  <body>
-    <h1>Calorie Tracker</h1>
+  <body
+    class="flex flex-row flex-wrap items-center justify-center bg-gray-900 gap-8"
+  >
+    <h1 class="text-3xl flex-[1_1_95%]">Calorie Tracker</h1>
 
-    <section class="repas">
-      <div class="ajoutRepas">
+    <section
+      class="repas flex flex-col items-center justify-center border-2 border-gray-500 rounded-lg p-4 gap-4"
+    >
+      <h2 class="meal-title">Repas</h2>
+      <div class="ajoutRepas flex flex-col items-center justify-center gap-4">
         <input
           type="text"
           name="meal_name"
@@ -24,14 +29,19 @@
           id="meal_calories"
           placeholder="Calories"
         />
-        <button id="addMeal">Ajouter Repas</button>
+        <button id="addMeal" class="border-1 border-gray-500 rounded-lg p-2">
+          Ajouter Repas
+        </button>
       </div>
-      <div class="meals-list">
-
-      </div>
+      <div class="meals-list flex flex-col gap-4"></div>
     </section>
-    <section class="activities">
-      <div class="ajoutActivity">
+    <section
+      class="activities flex flex-col items-center justify-center border-2 border-gray-500 rounded-lg p-4 gap-4"
+    >
+      <h2 class="act-title">Activités</h2>
+      <div
+        class="ajoutActivity flex flex-col items-center justify-center gap-4"
+      >
         <input
           type="text"
           name="activity_name"
@@ -44,20 +54,30 @@
           id="activity_calories"
           placeholder="Calories"
         />
-        <button id="addWorkout">Ajouter Activité</button>
+        <button id="addWorkout" class="border-1 border-gray-500 rounded-lg p-2">
+          Ajouter Activité
+        </button>
       </div>
-      <div class="workout-list">
-
-      </div>
+      <div class="workout-list flex flex-col gap-4"></div>
     </section>
-    <section class="dashboard">
-      <h2 class="dash-title">Statistiques</h2>
+    <section
+      class="dashboard flex flex-col items-center justify-center border-2 border-gray-500 rounded-lg p-4 gap-4 text-3xl"
+    >
+      <h2 class="dash-title">
+        Statistiques -<button
+          class="border-1 border-gray-500 rounded-lg p-4"
+          id="reset"
+        >
+          Reset
+        </button>
+      </h2>
       <!-- Stats -->
       <div class="calorieIntake"></div>
       <div class="calorieBurned"></div>
       <div class="calorieRemain"></div>
       <!-- barre calorie actuelle sur la limite -->
-      <div class="progression"></div>
+      <label for="" id="progress"></label>
+      <input type="range" min="0" max="100" class="progression" disabled />
     </section>
   </body>
 </html>

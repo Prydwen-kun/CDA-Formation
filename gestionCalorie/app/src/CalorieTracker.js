@@ -1,3 +1,5 @@
+import Storage from "./Storage";
+
 class CalorieTracker {
   constructor(caloLimit, caloTotal, repas = [], activity = []) {
     this.caloLimit = caloLimit;
@@ -12,7 +14,6 @@ class CalorieTracker {
   addWorkout(workout) {
     //object workout of type Workout
     this.activity.push(workout);
-    this.caloTotal -= workout.calories;
   }
   removeMeal(mealId) {
     const mealIndex = this.repas.findIndex((meal) => meal.id === mealId);
@@ -26,16 +27,15 @@ class CalorieTracker {
       (workout) => workout.id === workoutId
     );
     if (workoutIndex !== -1) {
-      this.caloTotal += this.activity[workoutIndex].calories;
       this.activity.splice(workoutIndex, 1);
     }
   }
   displayMeals() {
-    const mealList = document.querySelector(".meal-list");
+    const mealList = document.querySelector(".meals-list");
     mealList.innerHTML = ""; // Clear the list before displaying
     this.repas.forEach((meal) => {
       const mealItem = document.createElement("li");
-      mealItem.innerHTML = `${meal.name}: ${meal.calories} calories`;
+      mealItem.innerHTML = `${meal.nom}: ${meal.calories} calories`;
       const removeButton = document.createElement("button");
       removeButton.innerHTML = "Remove";
       removeButton.addEventListener("click", () => {
@@ -52,7 +52,7 @@ class CalorieTracker {
     workoutList.innerHTML = ""; // Clear the list before displaying
     this.activity.forEach((workout) => {
       const workoutItem = document.createElement("li");
-      workoutItem.innerHTML = `${workout.name}: ${workout.calories} calories`;
+      workoutItem.innerHTML = `${workout.nom}: ${workout.calories} calories`;
       const removeButton = document.createElement("button");
       removeButton.innerHTML = "Remove";
       removeButton.addEventListener("click", () => {
@@ -63,6 +63,45 @@ class CalorieTracker {
       workoutItem.appendChild(removeButton); // Append the remove button to the workout item
       workoutList.appendChild(workoutItem);
     });
+  }
+  displayStatistics() {
+    const intake = document.querySelector(".calorieIntake");
+    const burned = document.querySelector(".calorieBurned");
+    const remain = document.querySelector(".calorieRemain");
+    const barProgress = document.querySelector(".progression");
+    const progress = document.querySelector("#progress");
+
+    const calorieBurned = this.activity.reduce(
+      (acc, workout) => acc + workout.calories,
+      0
+    );
+
+    intake.innerHTML = `Calories ingérées: ${this.caloTotal}`;
+    burned.innerHTML = `Calories dépensées: ${calorieBurned}`;
+    remain.innerHTML = `Calories restantes: ${
+      this.caloLimit - (this.caloTotal - calorieBurned)
+    }`;
+    // Calculate the progress percentage
+    barProgress.value =
+      ((this.caloTotal - calorieBurned) / this.caloLimit) * 100;
+    // Set the color of the progress bar based on the percentage
+    if (barProgress.value > 100) {
+      barProgress.style.background = "red"; // Over limit
+    } else if (barProgress.value > 75) {
+      barProgress.style.background = "orange"; // Warning
+    } else {
+      barProgress.style.background = "green"; // Safe zone
+    }
+    progress.innerHTML = `Progression :${Math.round(barProgress.value)}%`;
+  }
+  reset() {
+    this.caloTotal = 0;
+    this.repas = [];
+    this.activity = [];
+    Storage.clearLocalStorage(); // Clear local storage
+    this.displayMeals(); // Display updated meals
+    this.displayWorkouts(); // Display updated workouts
+    this.displayStatistics(); // Display updated statistics
   }
 }
 
