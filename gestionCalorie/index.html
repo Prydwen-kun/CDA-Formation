@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion Calorie</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./app/style/style.css" />
+  </head>
+  <body>
+    <h1>Calorie Tracker</h1>
+
+    <section class="repas">
+      <div class="ajoutRepas">
+        <input
+          type="text"
+          name="meal_name"
+          id="meal_name"
+          placeholder="Nom du repas"
+        />
+        <input
+          type="number"
+          name="meal_calories"
+          id="meal_calories"
+          placeholder="Calories"
+        />
+        <button id="addMeal">Ajouter Repas</button>
+      </div>
+      <div class="meals-list">
+
+      </div>
+    </section>
+    <section class="activities">
+      <div class="ajoutActivity">
+        <input
+          type="text"
+          name="activity_name"
+          id="activity_name"
+          placeholder="Nom de l'activité"
+        />
+        <input
+          type="number"
+          name="activity_calories"
+          id="activity_calories"
+          placeholder="Calories"
+        />
+        <button id="addWorkout">Ajouter Activité</button>
+      </div>
+      <div class="workout-list">
+
+      </div>
+    </section>
+    <section class="dashboard">
+      <h2 class="dash-title">Statistiques</h2>
+      <!-- Stats -->
+      <div class="calorieIntake"></div>
+      <div class="calorieBurned"></div>
+      <div class="calorieRemain"></div>
+      <!-- barre calorie actuelle sur la limite -->
+      <div class="progression"></div>
+    </section>
+  </body>
+</html>
+<script type="module" src="./app/app.js"></script>
