@@ -27,11 +27,19 @@ function main() {
 
   //   add Meal button event listener
   addMealButton.addEventListener("click", () => {
-    const mealName = document.getElementById("meal_name").value;
+    const mealName = document.getElementById("meal_name").value.trim();
     const mealCalories = parseInt(
-      document.getElementById("meal_calories").value,
+      document.getElementById("meal_calories").value.trim(),
       10
     );
+    if (mealName === "") {
+      alert("Meal name cannot be empty.");
+      return; // Exit the function if the input is invalid
+    }
+    if (isNaN(mealCalories) || mealCalories <= 0) {
+      alert("Invalid calorie value. Please enter a positive number.");
+      return; // Exit the function if the input is invalid
+    }
     let mealIdList = tracker.repas.map((meal) => meal.id); // Get the list of existing meal IDs
     mealIdList.sort((a, b) => b - a);
     const mealId = mealIdList != [] ? mealIdList[0] + 1 : 0; // Generate a unique ID for the meal
@@ -44,11 +52,19 @@ function main() {
 
   //   add Workout button event listener
   addWorkoutButton.addEventListener("click", () => {
-    const workoutName = document.getElementById("activity_name").value;
+    const workoutName = document.getElementById("activity_name").value.trim();
     const workoutCalories = parseInt(
-      document.getElementById("activity_calories").value,
+      document.getElementById("activity_calories").value.trim(),
       10
     );
+    if (workoutName === "") {
+      alert("Workout name cannot be empty.");
+      return; // Exit the function if the input is invalid
+    }
+    if (isNaN(workoutCalories) || workoutCalories <= 0) {
+      alert("Invalid calorie value. Please enter a positive number.");
+      return;
+    }
     let workoutIdList = tracker.activity.map((workout) => workout.id); // Get the list of existing workout IDs
     workoutIdList.sort((a, b) => b - a);
     const workoutId = workoutIdList != [] ? workoutIdList[0] + 1 : 0; // Generate a unique ID for the workout
