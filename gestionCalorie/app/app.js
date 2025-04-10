@@ -62,6 +62,26 @@ function main() {
   //   clear local storage button event listener
   const resetButton = document.getElementById("reset");
   resetButton.addEventListener("click", tracker.reset);
+
+  //définir calorie limit
+  const limitButton = document.getElementById("definir");
+  const caloLimitInput = document.getElementById("calo_limit");
+  caloLimitInput.value = tracker.caloLimit; // Set the input value to the current limit
+  limitButton.addEventListener("click", () => {
+    const newLimit = parseInt(
+      document.getElementById("calo_limit").value.trim(),
+      10
+    );
+    if (isNaN(newLimit) || newLimit <= 0) {
+      tracker.caloLimit = 2000;
+      alert("Invalid calorie limit. Setting to default (2000).");
+      caloLimitInput.value = tracker.caloLimit; // Reset input value to default
+    } else {
+      tracker.caloLimit = newLimit;
+    }
+    Storage.saveToLocalStorage("appData", tracker); // Save updated state to local storage
+    tracker.displayStatistics(); // Display updated statistics
+  });
 }
 
 main();

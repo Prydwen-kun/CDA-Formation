@@ -70,6 +70,7 @@ class CalorieTracker {
     const remain = document.querySelector(".calorieRemain");
     const barProgress = document.querySelector(".progression");
     const progress = document.querySelector("#progress");
+    const progressBar = document.querySelector(".progressBar");
 
     const calorieBurned = this.activity.reduce(
       (acc, workout) => acc + workout.calories,
@@ -84,13 +85,16 @@ class CalorieTracker {
     // Calculate the progress percentage
     barProgress.value =
       ((this.caloTotal - calorieBurned) / this.caloLimit) * 100;
+    progressBar.style.width = `${
+      ((this.caloTotal - calorieBurned) / this.caloLimit) * 100 * 2
+    }px`;
     // Set the color of the progress bar based on the percentage
-    if (barProgress.value > 100) {
-      barProgress.style.background = "red"; // Over limit
-    } else if (barProgress.value > 75) {
-      barProgress.style.background = "orange"; // Warning
+    if (barProgress.value > 90) {
+      progressBar.style.backgroundColor = "red"; // Over limit
+    } else if (barProgress.value >= 75) {
+      progressBar.style.backgroundColor = "orange"; // Warning
     } else {
-      barProgress.style.background = "green"; // Safe zone
+      progressBar.style.backgroundColor = "green"; // Safe zone
     }
     progress.innerHTML = `Progression :${Math.round(barProgress.value)}%`;
   }

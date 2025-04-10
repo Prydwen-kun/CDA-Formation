@@ -64,20 +64,33 @@
       class="dashboard flex flex-col items-center justify-center border-2 border-gray-500 rounded-lg p-4 gap-4 text-3xl"
     >
       <h2 class="dash-title">
-        Statistiques -<button
-          class="border-1 border-gray-500 rounded-lg p-4"
-          id="reset"
-        >
+        Statistiques -
+        <button class="border-1 border-gray-500 rounded-lg p-4" id="reset">
           Reset
         </button>
       </h2>
+      <div class="calorieLimit">
+        <input
+          type="number"
+          name="calo_limit"
+          id="calo_limit"
+          placeholder="Limite"
+        />
+        <button class="border-1 border-gray-500 rounded-lg p-4" id="definir">
+          Définir Limite
+        </button>
+      </div>
       <!-- Stats -->
       <div class="calorieIntake"></div>
       <div class="calorieBurned"></div>
       <div class="calorieRemain"></div>
       <!-- barre calorie actuelle sur la limite -->
-      <label for="" id="progress"></label>
       <input type="range" min="0" max="100" class="progression" disabled />
+      <div class="calorieProgress">
+        <div class="progressBar">
+          <span id="progress"></span>
+        </div>
+      </div>
     </section>
   </body>
 </html>
